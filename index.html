@@ -1,39 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modern Interior</title>
 </head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora&family=Montserrat&display=swap');
+
+  body {
+    margin: 0;
+    background: #181719;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header {
+    padding: 0.5em;
+    margin: 0.5em;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+  }
+
+  header {
+    margin: 2em 1.5em;
+  }
+
+  li {
+    list-style-type: none;
+    float: left;
+  }
+
+  h1 {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: 2.25rem;
+  }
+
+  .menu-button,
+  .close-button {
+    font-size: 2.75rem;
+    margin: 0 0.2em;
+  }
+
+  .close-button {
+    
+    position: absolute;
+    top: 1.25em;
+    right: 3em;
+  }
+
+  .desc {
+    width: 80%;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    margin: 0.2em;
+    align-items: center;
+  }
+
+  .main-image {
+    text-align: center;
+  }
+
+  .main-image img {
+    width: 100%;
+  }
+
+  .card {
+    position: relative;
+    background: #181719;
+    padding: 1em;
+    width: 14em;
+    height: 6em;
+    right: -0.75em;
+    bottom: 4em;
+    box-shadow: 0 0.25em 0.25em #00000046;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.75rem;
+  }
+
+  .subp{
+    margin: 0.5em;
+  }
+
+  .dp {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+  }
+
+  .credit{
+    font-family: 'Lora', serif;
+    font-size: 1.125rem;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+
+  footer div {
+    margin: 0.5em;
+  }
+
+  @media (max-width: 576px) {
+    .nav-menu {
+      display: none;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+</style>
+
 <body>
   <nav>
-    <div>This interior</div>
-    <div>
+    <div class="header">This interior</div>
+    <div class="nav-menu">
+      <div class="close-button" onclick="closeNav()">&times;</div>
       <li>Home</li>
       <li>Collection</li>
       <li>About</li>
       <li>Contact</li>
     </div>
+    <div class="menu-button" onclick="openNav()">&#9776;</div>
   </nav>
   <header>
     <h1>Modern interior</h1>
-    <div>
-      A full-Service residential & commercial interior design and staging company offering professional organizing & eco-services.
+    <div class="desc">
+      A full-Service residential & commercial interior design and staging company offering professional organizing &
+      eco-services.
     </div>
-    <div>
+    <div class="read-more">
       Read more ->
     </div>
   </header>
   <section>
-    <img src="./photo1.png" alt="">
-    <div>
-      <div>
-        <img src="./photo2.png" alt="">
-        <div>Aliza Webber</div>
-        <div>Interior designer</div>
+    <div class="main-image">
+      <img src="./photo1.png" alt="">
+    </div>
+    <div class="card">
+      <div class="profile">
+        <div class="subp">
+          <img class="dp" src="./photo2.png" alt="">
+        </div>
+        <div class="subp">
+          <div>Aliza Webber</div>
+          <div>Interior designer</div>
+        </div>
       </div>
-      <div>
+      <div class="credit">
         Designed in 2020 by Aliza Webber
       </div>
     </div>
@@ -43,4 +178,14 @@
     <div>devchallenges.io</div>
   </footer>
 </body>
+<script>
+  function openNav() {
+    document.getElementById("nav-menu").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("nav-menu").style.width = "0%";
+  }
+</script>
+
 </html>
